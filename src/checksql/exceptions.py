@@ -1,0 +1,2 @@
+class CheckAbortedException(Exception):
+    pass
