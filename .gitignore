@@ -1,0 +1,7 @@
+*.egg-info/
+*.pyc
+.ipynb_checkpoints/
+__pycache__
+build/
+dist/
+src/checksql/_version.py
