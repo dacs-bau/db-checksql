@@ -2,11 +2,8 @@ import html
 import apsw
 import apsw.ext
 import polars as pl
-import logging
 
-from functools import lru_cache
 
-from polars.io.parquet.functions import _read_parquet_with_pyarrow
 
 from .findings import Findings
 from .exceptions import CheckAbortedException
@@ -77,7 +74,7 @@ class SelectQueryChecker:
                 for row in cursor.execute(query):
                     raw_results.append(row)
                     if len(raw_results) > row_limit:
-                        findings.error(f'Die Ausführung der Abfrage wurde abgebrochen, da das Ergebnis viel zu viele Zeilen enthält.')
+                        findings.error('Die Ausführung der Abfrage wurde abgebrochen, da das Ergebnis viel zu viele Zeilen enthält.')
                         raise CheckAbortedException()
             except apsw.SQLError as ex:
                 findings.error(f'Datenbankfehler: <code>{ html.escape(str(ex)) }</code>.')
@@ -115,7 +112,7 @@ class SelectQueryChecker:
 
         if not observed.equals(expected):
             ## FIXME: Lustigere Fehlersprüche einbauen.
-            findings.error(f"Das Ergebnis der Abfrage entspricht <strong>nicht</strong> dem erwarteten Ergebnis.")
+            findings.error("Das Ergebnis der Abfrage entspricht <strong>nicht</strong> dem erwarteten Ergebnis.")
 
     def __call__(self, query: str, findings=Findings()):
         self.check_result(query, findings)
