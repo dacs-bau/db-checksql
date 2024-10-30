@@ -7,7 +7,7 @@ from ._version import __version__ # noqa: F401
 
 __all__ = [
     'app',
-    'findings',
+    'Findings',
     'CheckAbortedException',
     'SelectQueryChecker'
 ]
