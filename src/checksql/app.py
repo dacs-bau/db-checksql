@@ -1,8 +1,6 @@
-import json
 import html
 import random
 
-from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -57,9 +55,9 @@ async def checkAnswer(pset: str, pid: int, query: str) -> list:
     try:
         CHECKERS[(pset, pid)](query, findings=findings)
     except MemoryError:
-        findings.exploit(f'Speicherverbrauch beim ausführen der Abfrage zu hoch. Ihre Abfrage liefert zu viele Zeilen zurück.')
+        findings.exploit("Speicherverbrauch beim ausführen der Abfrage zu hoch. Ihre Abfrage liefert zu viele Zeilen zurück.")
     except KeyError:
-        findings.syserror(f'Unbekannte Aufgabe <code>{ html.escape(pset) }</code> <code>{ pid }</code>".')
+        findings.syserror(f'Unbekannte Aufgabe <code>{ html.escape(pset) }</code> <code>{ html.escape(pid) }</code>".')
     except CheckAbortedException:
         if len(findings) == 1:
             findings.info("Prüfung wegen des obigen Fehlers frühzeitig abgebrochen. Bitte korrigieren Sie den Fehler damit alle Tests durchlaufen können.")
