@@ -57,7 +57,7 @@ async def checkAnswer(pset: str, pid: int, query: str) -> list:
     except MemoryError:
         findings.exploit("Speicherverbrauch beim ausführen der Abfrage zu hoch. Ihre Abfrage liefert zu viele Zeilen zurück.")
     except KeyError:
-        findings.syserror(f'Unbekannte Aufgabe <code>{ html.escape(pset) }</code> <code>{ html.escape(pid) }</code>".')
+        findings.syserror(f"Unbekannte Aufgabe <code>{ html.escape(pset) }</code> <code>{ html.escape(pid) }</code>.")
     except CheckAbortedException:
         if len(findings) == 1:
             findings.info("Prüfung wegen des obigen Fehlers frühzeitig abgebrochen. Bitte korrigieren Sie den Fehler damit alle Tests durchlaufen können.")
