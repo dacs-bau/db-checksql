@@ -1,7 +1,6 @@
 import html
 import random
 
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -14,6 +13,16 @@ GOOD_JOB = [
     "Herzlichen Glückwunsch, E. F. Codd wäre stolz auf Sie!",
     "Die Aufgabe haben Sie gerockt. Weiter so!",
     "Respekt, Sie haben die Aufgabe wie ein echter Datenbank-Ninja gelöst!"
+    "Genial! Ihre SQL-Query ist ein Datenbanktraum!",
+    "Wow! Diese Abfrage ist präziser als ein Schweizer Uhrwerk!",
+    "Donnerwetter! Diese Query würde selbst Larry Ellison beeindrucken!",
+    "Grandios! Mit diesem SELECT haben Sie den Jackpot geknackt!",
+    "Fantastisch! Ihre SQL-Syntax glänzt wie ein Diamant!",
+    "Beeindruckend! Diese Abfrage ist ordnungsgemäßer als ein Verwaltungshandbuch!",
+    "Mustergültig! Ihre SQL-Kenntnis verdient eine Beförderung in die nächste Besoldungsgruppe!",
+    "Formvollendet! Ihre Query ist so korrekt wie ein perfekt ausgefülltes Antragsformular!",
+    "Erstklassig! Ihre SQL-Fähigkeiten sind so verlässlich wie ein Beamter auf Lebenszeit!",
+    "Hochoffiziell bestätigt: Ihre Abfrage erfüllt alle Kriterien der Datenbankabfrageverordnung!",
 ]
 
 CHECKERS = {}
