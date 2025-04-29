@@ -12,7 +12,7 @@ GOOD_JOB = [
     "Bäm! So löst man die Aufgabe!",
     "Herzlichen Glückwunsch, E. F. Codd wäre stolz auf Sie!",
     "Die Aufgabe haben Sie gerockt. Weiter so!",
-    "Respekt, Sie haben die Aufgabe wie ein echter Datenbank-Ninja gelöst!"
+    "Respekt, Sie haben die Aufgabe wie ein echter Datenbank-Ninja gelöst!",
     "Genial! Ihre SQL-Query ist ein Datenbanktraum!",
     "Wow! Diese Abfrage ist präziser als ein Schweizer Uhrwerk!",
     "Donnerwetter! Diese Query würde selbst Larry Ellison beeindrucken!",
